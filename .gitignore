@@ -1,0 +1,4 @@
+/*.txt !requirements.txt
+/img/*
+.venv/
+.DS_Store
