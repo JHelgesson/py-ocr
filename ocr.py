@@ -3,7 +3,11 @@ import os
 from PIL import Image
 import pytesseract
 
-def run_ocr(image_path, lang="fr"):
+# Path to Tesseracts tessdata-mapp
+os.environ["TESSDATA_PREFIX"] = "/opt/homebrew/share/tessdata"
+
+
+def run_ocr(image_path, lang="fra"):
     """Do OCR on image and save text"""
     # Open image (webp/jpg/png funkar med Pillow)
     img = Image.open(image_path)
@@ -25,7 +29,7 @@ def main():
         sys.exit(1)
 
     # Do OCR with Tesseract
-    text = run_ocr(image_path, lang="swe")
+    text = run_ocr(image_path, lang="fra")
 
     # Save result to file
     output_file = "result.txt"
